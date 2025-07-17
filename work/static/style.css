@@ -1,0 +1,93 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+    box-sizing: border-box;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.action-button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.nav-button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    background: #007BFF;
+    color: white;
+    border: none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+    margin-left: auto;
+}
+
+.action-button:hover {
+    background: #0056b3;
+}
+
+.nav-button:hover {
+    background: #0056b3;
+}
+
+.result {
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.spam {
+    background: #ffcccc;
+    color: #d8000c;
+}
+
+.ham {
+    background: #ccffcc;
+    color: #006400;
+}
+
+.settings-form {
+    margin-bottom: 20px;
+}

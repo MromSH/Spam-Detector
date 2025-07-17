@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавление новой записи</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/settings.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Добавить новую запись</h1>
+        <form method="post" action="/newinfo">
+            <textarea name="text" placeholder="Введите текст...">{{ input_text }}</textarea>
+            <p>Это сообщение - спам?</p>
+            <label class="radio-option">
+                <input type="radio" name="choice" value="spam" 
+                    {% if selected_choice == "spam" %}
+                    checked
+                    {% endif%}>
+                Да
+            </label>
+
+            <label class="radio-option">
+                <input type="radio" name="choice" value="ham"
+                    {% if selected_choice == "ham" %}
+                    checked
+                    {% endif%}>
+                Нет
+            </label>
+            <div class="button-group">
+                <button type="submit" class="action-button">Добавить</button>
+                <a href="/" class="nav-button">На главную</a>
+            </div>
+        </form>
+        <div style="margin: 15px 0;"></div>
+        <form method="post" action="/reteach" style="display: inline; margin-top: 20px;">
+            <button type="submit" class="action-button">Переобучить модель</button>
+        </form> 
+        {% if result %}
+        <div class="result {{ 'ham' if 'Запись успешно добавлена' or 'Модель переобучена' in result else 'spam' }}">
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

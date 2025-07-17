@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Загрузка отчетов</title>
+        <link rel="stylesheet" href="/static/style.css">
+        <script src="/static/settings.js" defer></script>
+    </head>
+    <body>
+        <div class="container">
+        <h1>Выберите отчеты для загрузки</h1>
+        <form method="post" action="/reporting">
+            <fieldset style="border: none;">
+                <label>
+                    <input type="checkbox" name="report_type" value="graphic_report">
+                    Графический отчет
+                </label>
+                <label>
+                    <input type="checkbox" name="report_type" value="model_report">
+                    Отчет по модели
+                </label>
+                <label>
+                    <input type="checkbox" name="report_type" value="text_report">
+                    Текстовый отчет
+                </label>
+            </fieldset>
+            <div class="button-group">
+                <button type="submit" class="action-button">
+                    <i class="fas fa-download"></i>Скачать
+                </button>
+                <a href="/" class="nav-button">На главную</a>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="result {{ 'spam' if 'Отчеты успешно загружены' or 'Отчет успешно загружен' in result else 'ham' }}">
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+    </body>
+</html>

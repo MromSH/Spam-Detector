@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Проверка на спам</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/settings.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Проверка текста на спам</h1>
+        <form method="post" action="/predict">
+            <textarea name="text" placeholder="Введите текст...">{{ input_text }}</textarea>
+            <div class="button-group">
+                <button type="submit" class="action-button">Проверить</button>
+                <a href="/addinfo" class="nav-button">Добавить запись</a>
+                <a href="/reports" class="nav-button">Скачать отчеты</a>
+                <a href="/settings" class="nav-button">Настройки</a>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="result {{ 'spam' if 'Спам' in result else 'ham' }}">
+            {{ result }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>

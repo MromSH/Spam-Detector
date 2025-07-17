@@ -1,0 +1,13 @@
+name: spam_detector
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pandas=2.2.3=py311h5da7b33_0
+  - fastapi>=0.68.0
+  - uvicorn>=0.15.0
+  - scikit-learn>=1.0.0
+  - matplotlib
+  - jinja2>=3.0.0
+  - pip>=21.0
+  - python-multipart>=0.0.5
